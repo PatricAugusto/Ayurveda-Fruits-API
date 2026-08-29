@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "nodemon src/server.js",
     "start": "node src/server.js",
+    "cli": "node src/cli.js",
     "prisma:migrate": "prisma migrate dev",
     "prisma:studio": "prisma studio"
   },
@@ -15,10 +16,13 @@
   "license": "ISC",
   "dependencies": {
     "@prisma/client": "^5.22.0",
+    "axios": "^1.20.0",
+    "chalk": "^6.0.0",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
-    "groq-sdk": "^1.6.0"
+    "groq-sdk": "^1.6.0",
+    "inquirer": "^14.2.0"
   },
   "devDependencies": {
     "dotenv-cli": "^11.0.0",
