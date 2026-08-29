@@ -1,0 +1,35 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Season {
+  SUMMER
+  WINTER
+  SPRING
+  AUTUMN
+  MONSOON
+}
+
+enum Dosha {
+  VATA
+  PITTA
+  KAPHA
+}
+
+model Food {
+  id          String   @id @default(uuid())
+  name        String   @unique
+  category    String   // FRUIT ou VEGETABLE
+  season      Season
+  pacifies    Dosha[]  // Doshas que este alimento pacifica
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("foods")
+}
