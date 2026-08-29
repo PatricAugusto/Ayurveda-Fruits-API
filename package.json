@@ -1,24 +1,26 @@
 {
   "name": "ayurveda-fruits-api",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "API REST para frutas e legumes sazonais com medicina Ayurveda e LLM",
+  "main": "src/server.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "migrate": "prisma migrate dev --name init_database"
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:studio": "prisma studio"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
+    "@prisma/client": "^5.22.0",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "groq-sdk": "^1.6.0"
   },
   "devDependencies": {
-    "@prisma/client": "^5.22.0",
     "dotenv-cli": "^11.0.0",
     "nodemon": "^3.1.14",
     "prisma": "^5.22.0"
